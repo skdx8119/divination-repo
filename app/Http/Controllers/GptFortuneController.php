@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use OpenAI\OpenAI;
-use OpenAI\API\Completion;
 use OpenAI\Laravel\Facades\OpenAI;
 
 class GptFortuneController extends Controller
