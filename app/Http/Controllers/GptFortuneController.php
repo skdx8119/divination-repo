@@ -9,7 +9,7 @@ class GptFortuneController extends Controller
 {
     public function show(Request $request)
     {
-        OpenAI::setApiKey(env('OPENAI_API_KEY'));
+        OpenAI::setApiKey(env('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'));
 
         $prompt = 'Predict the future based on these information: ' . $request->input('info');
 
