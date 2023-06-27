@@ -29,10 +29,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::post('/gptfortune', [GptFortuneController::class, 'show'])->middleware('auth');
-Route::get('/gptfortuneform', function () {
-    return view('gptfortuneform');
-})->middleware('auth');
+Route::get('/chat', [ChatController::class, 'chat'])->name('chat.create');
+Route::post('/chat', [ChatController::class, 'chat'])->name('chat.post');
 
 
 require __DIR__.'/auth.php';
