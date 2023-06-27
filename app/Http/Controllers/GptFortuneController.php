@@ -3,28 +3,24 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use GuzzleHttp\Client;
+use OpenAI\OpenAI;
+use OpenAI\API\Completion;
 
 class GptFortuneController extends Controller
 {
     public function show(Request $request)
     {
-        $client = new Client(['base_uri' => 'https://api.openai.com/v1/']);
+        OpenAI::setApiKey(env('OPENAI_API_KEY'));
 
-        $response = $client->post('engines/davinci-codex/completions', [
-            'headers' => [
-                'Authorization' => 'Bearer ' . env('OPENAI_API_KEY'),
-                'Content-Type' => 'application/json',
-            ],
-            'json' => [
-                'prompt' => 'Predict the future based on these information: ' . $request->input('info'),
-                'max_tokens' => 100,
-            ],
+        $prompt = 'Predict the future based on these information: ' . $request->input('info');
+
+        $gpt = Completion::create([
+            'model' => 'text-davinci-003',
+            'prompt' => $prompt,
+            'max_tokens' => 100
         ]);
 
-        $result = json_decode((string) $response->getBody(), true);
-
-        $fortune = $result['choices'][0]['text'];
+        $fortune = $gpt->toArray()['choices'][0]['text'];
 
         return view('gptfortune', ['fortune' => $fortune]);
     }
