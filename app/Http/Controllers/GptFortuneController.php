@@ -7,20 +7,32 @@ use OpenAI\Laravel\Facades\OpenAI;
 
 class GptFortuneController extends Controller
 {
+    public function generateFortune($inputInfo) {
+        $result = OpenAI::completions()->create([
+            'model' => 'text-davinci-003', // 2023年6月現在、利用可能なエンジン名に置き換えてください
+            'prompt' => 'Predict the future based on these information: '.$inputInfo,
+            'temperature' => 0.8,
+            'max_tokens' => 150,
+        ]);
+        return $result['choices'][0]['text'];
+    }
+
     public function show(Request $request)
     {
-        OpenAI::setApiKey('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');
+        OpenAI::setApiKey(env('OPENAI_API_KEY'));
 
-        $prompt = 'Predict the future based on these information: ' . $request->input('info');
+        $inputInfo = $request->input('info');
+        if ($inputInfo != null) {
+            $fortune = $this->generateFortune($inputInfo);
 
-        $gpt = Completion::create([
-            'model' => 'text-davinci-003',
-            'prompt' => $prompt,
-            'max_tokens' => 100
-        ]);
+            $messages = [
+                ['title' => 'User Info', 'content' => $inputInfo],
+                ['title' => 'Fortune', 'content' => $fortune]
+            ];
+            return view('gptfortune', ['messages' => $messages]);
+        }
 
-        $fortune = $gpt->toArray()['choices'][0]['text'];
-
-        return view('gptfortune', ['fortune' => $fortune]);
+        return view('gptfortune');
     }
+
 }
