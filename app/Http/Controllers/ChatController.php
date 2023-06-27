@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use OpenAI\Laravel\Facades\OpenAI;
 
-class GptFortuneController extends Controller
+class ChatController extends Controller
 {
     public function chat(Request $request)
     {
@@ -32,5 +32,4 @@ class GptFortuneController extends Controller
         ]);
         return $result['choices'][0]['text'];
     }
-
 }
