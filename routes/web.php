@@ -30,5 +30,9 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::post('/gptfortune', [GptFortuneController::class, 'show'])->middleware('auth');
+Route::get('/gptfortuneform', function () {
+    return view('gptfortuneform');
+})->middleware('auth');
+
 
 require __DIR__.'/auth.php';
