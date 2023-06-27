@@ -12,7 +12,7 @@ return [
     | and organization on your OpenAI dashboard, at https://openai.com.
     */
 
-    'api_key' => env('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'),
+    'api_key' => env(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),
     'organization' => env('OPENAI_ORGANIZATION'),
 
     /*
