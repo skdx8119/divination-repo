@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-    <form method="POST" action="/user/update">
-        @csrf
-        <label>
-            Blood Type:
-            <input type="text" name="blood_type" value="{{ old('blood_type', $user->blood_type) }}">
-        </label>
-        <label>
-            Birthday:
-            <input type="date" name="birthday" value="{{ old('birthday', $user->birthday ? $user->birthday->format('Y-m-d') : null) }}">
-        </label>
-        <button type="submit">Update</button>
-    </form>
-</html>
+<form method="POST" action="{{ route('user.update') }}">
+    @csrf
+    <label for="blood_type">Blood Type:</label>
+    <input id="blood_type" type="text" name="blood_type" required>
+
+    <label for="birthday">Birthday:</label>
+    <input id="birthday" type="date" name="birthday" required>
+
+    <button type="submit">Update</button>
+</form>
