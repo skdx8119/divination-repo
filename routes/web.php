@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\ChatController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,8 +28,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/chat', [ChatController::class, 'chat'])->name('chat.create');
-Route::post('/chat', [ChatController::class, 'chat'])->name('chat.post');
+Route::post('/user/update', [UserController::class, 'update'])->name('user.update');
+
 
 
 require __DIR__.'/auth.php';
