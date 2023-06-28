@@ -21,10 +21,11 @@ return new class extends Migration
     /**
      * Reverse the migrations.
      */
-    public function down(): void
+    public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropColumn('blood_type');
+            $table->dropColumn('birthday');
         });
     }
 };
