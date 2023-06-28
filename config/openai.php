@@ -12,8 +12,8 @@ return [
     | and organization on your OpenAI dashboard, at https://openai.com.
     */
 
-    'api_key' => config('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'),
-    'organization' => config('org-zGJ9MT9dW3TubYd100CKFbyM'),
+    'api_key' => env('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'),
+    'organization' => env('org-zGJ9MT9dW3TubYd100CKFbyM'),
 
     /*
     |--------------------------------------------------------------------------
@@ -24,5 +24,5 @@ return [
     | for a response. By default, the client will time out after 30 seconds.
     */
 
-    'request_timeout' => config('OPENAI_REQUEST_TIMEOUT', 30),
+    'request_timeout' => env('OPENAI_REQUEST_TIMEOUT', 30),
 ];
