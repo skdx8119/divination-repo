@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserProfileController;
 
 
 /*
@@ -28,6 +29,12 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::middleware(['auth:sanctum', 'verified'])->group(function () {
+    Route::put('/user/profile', [UserProfileController::class, 'update'])->name('profile.update');
+});
+
+Route::get('/fortune/show', [App\Http\Controllers\FortuneController::class, 'show'])->name('fortune.show');
 
 
 require __DIR__.'/auth.php';
