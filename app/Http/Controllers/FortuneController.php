@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use Carbon\Carbon;
 
 class FortuneController extends Controller
 {
     public function show(Request $request)
     {
+        try {
+
         $request->validate([
             'blood_type' => ['required', Rule::in(['A', 'B', 'O', 'AB'])],
             'birthday' => 'required|date',
@@ -16,11 +19,45 @@ class FortuneController extends Controller
 
         $blood_type = $request->input('blood_type');
         $zodiac = $this->getZodiac(new \DateTime($request->input('birthday')));
+        $element = $this->getElementFromZodiac($zodiac);
 
+        // fortunes configから占い結果を取得
         $fortune = config("fortunes.$blood_type.$zodiac");
 
-        return view('fortune.show', ['fortune' => $fortune]);
+        // ラッキーアイテムはランダムで選びます
+        $lucky_items = ['pen', 'book', 'coffee', 'glasses', 'watch', 'phone', 'shirt', 'shoes'];
+        $lucky_item = $lucky_items[array_rand($lucky_items)];
+
+        // 相性の良い人を取得します
+        $compatible_people = $this->getCompatiblePeople($blood_type, $element);
+
+        if ($compatible_people) {
+            $compatible_person = $compatible_people[array_rand($compatible_people)];
+            $compatible_blood_type = $compatible_person['blood_type'];
+            $compatible_birthday = $compatible_person['birthday'];
+            $compatible_person_name = $compatible_person['name'];
+        } else {
+            $compatible_person = null;
+            $compatible_blood_type = null;
+            $compatible_birthday = null;
+            $compatible_person_name = null;
+        }
+
+        return view('fortune.show', [
+            'fortune' => $fortune,
+            'lucky_item' => $lucky_item,
+            'compatible_person' => $compatible_person_name,
+            'blood_type' => $blood_type,
+            'zodiac' => $zodiac,
+            'compatible_blood_type' => $compatible_blood_type,
+            'compatible_birthday' => $compatible_birthday,
+        ]);
+    } catch (\Exception $e) {
+        return back()->withErrors(['msg' => $e->getMessage()]);
     }
+
+    }
+
 
     private function getZodiac(\DateTime $birthday)
     {
@@ -50,4 +87,60 @@ class FortuneController extends Controller
 
         throw new \Exception('Invalid birthday');
     }
+
+    private function getElementFromZodiac($zodiac)
+    {
+        $elements = [
+            'Aries' => 'Fire',
+            'Taurus' => 'Earth',
+            'Gemini' => 'Air',
+            'Cancer' => 'Water',
+            'Leo' => 'Fire',
+            'Virgo' => 'Earth',
+            'Libra' => 'Air',
+            'Scorpio' => 'Water',
+            'Sagittarius' => 'Fire',
+            'Capricorn' => 'Earth',
+            'Aquarius' => 'Air',
+            'Pisces' => 'Water',
+        ];
+
+        if (array_key_exists($zodiac, $elements)) {
+            return $elements[$zodiac];
+        } else {
+            throw new \Exception('Invalid zodiac');
+        }
+    }
+    private function getCompatiblePeople($blood_type, $element)
+{
+    $compatible_people = [];
+
+    // 同じ血液型の相性の良い人を取得
+    $same_blood_type_compatible_people = config("compatibles.$blood_type");
+    if ($same_blood_type_compatible_people) {
+        $compatible_people = array_merge($compatible_people, $same_blood_type_compatible_people[$element] ?? []);
+    }
+
+    // 血液型が~型の場合は-型も考慮します
+    if ($blood_type === 'A') {
+        $compatible_people = array_merge($compatible_people, config("compatibles.O.$element") ?? []);
+    }
+
+    if ($blood_type === 'B') {
+        $compatible_people = array_merge($compatible_people, config("compatibles.AB.$element") ?? []);
+    }
+
+    if ($blood_type === 'O') {
+        $compatible_people = array_merge($compatible_people, config("compatibles.A.$element") ?? []);
+        $compatible_people = array_merge($compatible_people, config("compatibles.O.$element") ?? []);
+    }
+
+    if ($blood_type === 'AB') {
+        $compatible_people = array_merge($compatible_people, config("compatibles.B.$element") ?? []);
+    }
+
+    return $compatible_people;
+}
+
+
 }
