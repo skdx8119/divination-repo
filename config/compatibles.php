@@ -3,74 +3,74 @@
 return [
     'A' => [
         'Fire' => [
-            ['name' => 'Person49', 'blood_type' => 'A', 'birthday' => '11/22'],
-            ['name' => 'Person1', 'blood_type' => 'O', 'birthday' => '03/21'],
+            ['name' => '笹木咲（にじさんじ）', 'blood_type' => 'A', 'birthday' => '11/11'],
+            ['name' => '飛鳥ひな（にじさんじ）', 'blood_type' => 'O', 'birthday' => '03/03'],
         ],
         'Earth' => [
-            ['name' => 'Person50', 'blood_type' => 'A', 'birthday' => '12/22'],
-            ['name' => 'Person4', 'blood_type' => 'O', 'birthday' => '04/20'],
+            ['name' => '轟京子（にじさんじ）', 'blood_type' => 'A', 'birthday' => '12/22'],
+            ['name' => '戌神ころね（ホロライブ）', 'blood_type' => 'O', 'birthday' => '04/13'],
         ],
         'Air' => [
-            ['name' => 'Person51', 'blood_type' => 'A', 'birthday' => '01/20'],
-            ['name' => 'Person7', 'blood_type' => 'O', 'birthday' => '09/23'],
+            ['name' => 'シェリン・バーガンディ（にじさんじ）', 'blood_type' => 'A', 'birthday' => '01/06'],
+            ['name' => '星導ショウ（にじさんじ）', 'blood_type' => 'O', 'birthday' => '09/10'],
         ],
         'Water' => [
-            ['name' => 'Person52', 'blood_type' => 'A', 'birthday' => '02/19'],
-            ['name' => 'Person10', 'blood_type' => 'O', 'birthday' => '06/22'],
+            ['name' => '葉加瀬冬雪（にじさんじ）', 'blood_type' => 'A', 'birthday' => '02/19'],
+            ['name' => '魔使マオ（にじさんじ）', 'blood_type' => 'O', 'birthday' => '05/31'],
         ],
     ],
     'B' => [
         'Fire' => [
-            ['name' => 'Person53', 'blood_type' => 'B', 'birthday' => '12/21'],
-            ['name' => 'Person13', 'blood_type' => 'AB', 'birthday' => '03/21'],
+            ['name' => '四季凪アキラ（にじさんじ）', 'blood_type' => 'B', 'birthday' => '12/12'],
+            ['name' => 'レオス・ヴィンセント', 'blood_type' => 'AB', 'birthday' => '03/08'],
         ],
         'Earth' => [
-            ['name' => 'Person14', 'blood_type' => 'B', 'birthday' => '01/19'],
-            ['name' => 'Person16', 'blood_type' => 'AB', 'birthday' => '04/20'],
+            ['name' => '兎田ぺこら（ホロライブ）', 'blood_type' => 'B', 'birthday' => '01/12'],
+            ['name' => '葉山舞鈴（にじさんじ）', 'blood_type' => 'AB', 'birthday' => '03/24'],
         ],
         'Air' => [
-            ['name' => 'Person55', 'blood_type' => 'B', 'birthday' => '02/18'],
-            ['name' => 'Person19', 'blood_type' => 'AB', 'birthday' => '09/23'],
+            ['name' => '燦鳥ノム（サントリー公式）', 'blood_type' => 'B', 'birthday' => '02/01'],
+            ['name' => '来栖夏芽（にじさんじ）', 'blood_type' => 'AB', 'birthday' => '09/07'],
         ],
         'Water' => [
-            ['name' => 'Person56', 'blood_type' => 'B', 'birthday' => '03/20'],
-            ['name' => 'Person22', 'blood_type' => 'AB', 'birthday' => '06/22'],
+            ['name' => '早瀬走（にじさんじ）', 'blood_type' => 'B', 'birthday' => '03/20'],
+            ['name' => '風真いろは（ホロライブ）', 'blood_type' => 'AB', 'birthday' => '06/18'],
         ],
     ],
     'O' => [
         'Fire' => [
-            ['name' => 'Person57', 'blood_type' => 'O', 'birthday' => '07/23'],
-            ['name' => 'Person25', 'blood_type' => 'A', 'birthday' => '03/21'],
+            ['name' => '夢月ロア（にじさんじ）', 'blood_type' => 'O', 'birthday' => '07/04'],
+            ['name' => '白波らむね（ぶいすぽ）', 'blood_type' => 'A', 'birthday' => '03/21'],
         ],
         'Earth' => [
-            ['name' => 'Person58', 'blood_type' => 'O', 'birthday' => '08/23'],
-            ['name' => 'Person28', 'blood_type' => 'A', 'birthday' => '04/20'],
+            ['name' => '本間ひまわり（にじさんじ）', 'blood_type' => 'O', 'birthday' => '08/10'],
+            ['name' => '不破湊（にじさんじ）', 'blood_type' => 'A', 'birthday' => '04/18'],
         ],
         'Air' => [
-            ['name' => 'Person59', 'blood_type' => 'O', 'birthday' => '05/21'],
-            ['name' => 'Person31', 'blood_type' => 'A', 'birthday' => '09/23'],
+            ['name' => 'アキ・ローゼンタール', 'blood_type' => 'O', 'birthday' => '06/01'],
+            ['name' => '静凛（にじさんじ）', 'blood_type' => 'A', 'birthday' => '08/28'],
         ],
         'Water' => [
-            ['name' => 'Person60', 'blood_type' => 'O', 'birthday' => '10/24'],
-            ['name' => 'Person34', 'blood_type' => 'A', 'birthday' => '06/22'],
+            ['name' => 'ニュイ・ソシエール（にじさんじ）', 'blood_type' => 'O', 'birthday' => '10/31'],
+            ['name' => '夢追翔（にじさんじ）', 'blood_type' => 'A', 'birthday' => '06/28'],
         ],
     ],
     'AB' => [
         'Fire' => [
-            ['name' => 'Person61', 'blood_type' => 'AB', 'birthday' => '08/22'],
-            ['name' => 'Person37', 'blood_type' => 'B', 'birthday' => '03/21'],
+            ['name' => '朝ノ瑠璃（朝ノ姉妹ぷろじぇくと）', 'blood_type' => 'AB', 'birthday' => '08/04'],
+            ['name' => '赤羽葉子（にじさんじ）', 'blood_type' => 'B', 'birthday' => '04/05'],
         ],
         'Earth' => [
-            ['name' => 'Person62', 'blood_type' => 'AB', 'birthday' => '09/22'],
-            ['name' => 'Person40', 'blood_type' => 'B', 'birthday' => '04/20'],
+            ['name' => '文野環（にじさんじ）', 'blood_type' => 'AB', 'birthday' => '毎日'],
+            ['name' => '春崎エアル（にじさんじ）', 'blood_type' => 'B', 'birthday' => '04/03'],
         ],
         'Air' => [
-            ['name' => 'Person63', 'blood_type' => 'AB', 'birthday' => '06/21'],
-            ['name' => 'Person43', 'blood_type' => 'B', 'birthday' => '09/23'],
+            ['name' => '風真いろは（ホロライブ）', 'blood_type' => 'AB', 'birthday' => '06/18'],
+            ['name' => '三枝明那（にじさんじ）', 'blood_type' => 'B', 'birthday' => '09/01'],
         ],
         'Water' => [
-            ['name' => 'Person64', 'blood_type' => 'AB', 'birthday' => '11/21'],
-            ['name' => 'Person46', 'blood_type' => 'B', 'birthday' => '06/22'],
+            ['name' => '家長むぎ（にじさんじ）', 'blood_type' => 'AB', 'birthday' => '11/07'],
+            ['name' => '天宮こころ（にじさんじ）', 'blood_type' => 'B', 'birthday' => '07/01'],
         ],
     ],
     ];
