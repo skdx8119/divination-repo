@@ -25,7 +25,7 @@ class FortuneController extends Controller
         $fortune = config("fortunes.$blood_type.$zodiac");
 
         // ラッキーアイテムはランダムで選びます
-        $lucky_items = ['pen', 'book', 'coffee', 'glasses', 'watch', 'phone', 'shirt', 'shoes'];
+        $lucky_items = ['ぺん', 'ちくわ', 'コーヒー', 'ひまわり', '時計', 'モノクル', 'パンダ', 'まめねこ', 'ライトノベル', 'またたび' ,'試験管' ,'マイク' ,'サイリウム' ,'うちわ'];
         $lucky_item = $lucky_items[array_rand($lucky_items)];
 
         // 相性の良い人を取得します

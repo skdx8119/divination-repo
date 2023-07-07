@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Fortune Result') }}
+            {{ __('占い結果') }}
         </h2>
     </x-slot>
 
@@ -12,14 +12,14 @@
                     <div class="container">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title">これがあなたの運命です：</h5>
-                                <p class="card-text">{{ $fortune }}</p>
+                                <h5 class="card-title bg-indigo-400 text-white rounded-lg text-lg px-4 py-2 inline-block">これがあなたの運命です：</h5>
+                                <p class="card-text px-4 py-2">{{ $fortune }}</p>
 
-                                <h5 class="card-title">これがあなたのラッキーアイテムです：</h5>
-                                <p class="card-text">{{ $lucky_item }}</p>
+                                <h5 class="card-title bg-yellow-300 text-white rounded-lg text-lg px-4 py-2 inline-block">これがあなたのラッキーアイテムです：</h5>
+                                <p class="card-text px-4 py-2">{{ $lucky_item }}</p>
 
-                                <h5 class="card-title">あなたと相性の良い人物：</h5>
-                                <p class="card-text">{{ $compatible_blood_type }}型、誕生日{{ $compatible_birthday }}の{{ $compatible_person }}</p>
+                                <h5 class="card-title bg-pink-400 text-white rounded-lg text-lg px-4 py-2 inline-block">あなたと相性の良い人物：</h5>
+                                <p class="card-text px-4 py-2">{{ $compatible_person }}{{ $compatible_blood_type }}型、誕生日{{ $compatible_birthday }}</p>
 
 
                             </div>
