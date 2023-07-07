@@ -34,7 +34,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
     Route::put('/user/profile', [UserProfileController::class, 'update'])->name('profile.update');
 });
 
-Route::get('/fortune/show', [App\Http\Controllers\FortuneController::class, 'show'])->name('fortune.show');
+Route::get('/fortune/show', [App\Http\Controllers\FortuneController::class, 'show'])
+    ->middleware(['auth'])
+    ->name('fortune.show');
 
 
 require __DIR__.'/auth.php';
