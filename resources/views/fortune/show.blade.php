@@ -19,7 +19,7 @@
                                 <p class="card-text px-4 py-2">{{ $lucky_item }}</p>
 
                                 <h5 class="card-title bg-pink-400 text-white rounded-lg text-lg px-4 py-2 inline-block">あなたと相性の良い人物：</h5>
-                                <p class="card-text px-4 py-2">{{ $compatible_person }}{{ $compatible_blood_type }}型、誕生日{{ $compatible_birthday }}</p>
+                                <p class="card-text px-4 py-2">{{ $compatible_person }}{{ $compatible_blood_type }}型、誕生日:{{ $compatible_birthday }}</p>
 
 
                             </div>
