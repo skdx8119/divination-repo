@@ -17,10 +17,4 @@ export default defineConfig({
             host: 'localhost',
         },
     },
-
-    build: {
-        base: process.env.NODE_ENV === 'production'
-            ? 'https://vtuber-compatibility-diagnosis-689c2f0ddc1e.herokuapp.com/'
-            : '/',
-    },
 });
