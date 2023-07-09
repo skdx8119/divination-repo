@@ -123,10 +123,13 @@ class FortuneController extends Controller
 
     // 血液型が~型の場合は-型も考慮します
     if ($blood_type === 'A') {
-        $compatible_people = array_merge($compatible_people, config("compatibles.O.$element") ?? []);
+        $compatible_people = array_merge($compatible_people, config("compatibles.A.$element") ?? []);
+        $compatible_people = array_merge($compatible_people, config
+        ("compatibles.O.$element") ?? []);
     }
 
     if ($blood_type === 'B') {
+        $compatible_people = array_merge($compatible_people, config("compatibles.B.$element") ?? []);
         $compatible_people = array_merge($compatible_people, config("compatibles.AB.$element") ?? []);
     }
 
@@ -136,6 +139,7 @@ class FortuneController extends Controller
     }
 
     if ($blood_type === 'AB') {
+        $compatible_people = array_merge($compatible_people, config("compatibles.AB.$element") ?? []);
         $compatible_people = array_merge($compatible_people, config("compatibles.B.$element") ?? []);
     }
 
