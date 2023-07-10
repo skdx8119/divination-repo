@@ -14,8 +14,10 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased relative overflow-hidden">
-        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
+    <body class="font-sans text-gray-900 antialiased">
+        <div class="fixed top-0 left-0 w-screen h-screen z-negative" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover; animation: rotation 30s infinite linear; transform-origin: center center;"></div>
+
+        <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 z-0">
             <div>
                 <a href="/">
                     <img class="w-20" src="{{ asset('images/24051959.png') }}" alt="Divination Logo">
@@ -27,6 +29,4 @@
             </div>
         </div>
     </body>
-
-
 </html>
