@@ -14,3 +14,11 @@
         transform: rotate(360deg);
     }
 }
+
+.bg-rotate {
+    animation: rotation 120s infinite linear;
+    transform-origin: center center;
+    transform: scale(1.2);  /* 画像を20%拡大 */
+    z-index: -1;
+}
+
