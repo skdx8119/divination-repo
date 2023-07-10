@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.z-negative {
+    z-index: -1;
+}
+
 @keyframes rotation {
     from {
         transform: rotate(0deg);
