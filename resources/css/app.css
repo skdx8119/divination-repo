@@ -14,3 +14,17 @@
         transform: rotate(360deg);
     }
 }
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 200%;
+    z-index: -1;
+    background: url("{{ asset('images/23928558.jpg') }}") 0 0;
+    background-size: 50% 50%;
+    animation: rotation 30s infinite linear;
+}
+

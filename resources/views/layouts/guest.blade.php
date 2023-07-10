@@ -14,10 +14,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased relative overflow-hidden" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover;">
-        <div class="absolute inset-0 z-negative overflow-hidden">
-            <img class="object-cover min-w-full min-h-full animate-rotation" src="{{ asset('images/23928558.jpg') }}" style="transform-origin: top center;" />
-        </div>
+    <body class="font-sans text-gray-900 antialiased relative overflow-hidden">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
             <div>
                 <a href="/">
@@ -30,5 +27,6 @@
             </div>
         </div>
     </body>
+
 
 </html>
