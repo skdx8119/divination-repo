@@ -15,7 +15,7 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans text-gray-900 antialiased" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover;">
+    <body class="font-slackside text-gray-900 antialiased" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover;">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
             <div class="bg-white rounded-full p-3 inline-block">
                 <a href="/">
