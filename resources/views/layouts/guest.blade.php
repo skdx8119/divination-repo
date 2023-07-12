@@ -10,12 +10,12 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Rubik+Distressed&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-rubik text-gray-900 antialiased" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover;">
+    <body class="font-sans text-gray-900 antialiased" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover;">
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0">
             <div class="bg-white rounded-full p-3 inline-block">
                 <a href="/">
