@@ -10,12 +10,12 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Slackside+One&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-slackside antialiased" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover;">
+    <body class="font-sans antialiased" style="background-image: url('{{ asset('images/23928558.jpg') }}'); background-size: cover;">
         <div class="min-h-screen">
             @include('layouts.navigation')
 

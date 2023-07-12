@@ -12,8 +12,7 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-                'slackside': ['"Slackside One"', 'cursive'],
+                sans: ['Yusei Magic', ...defaultTheme.fontFamily.sans],
             },
         },
     },
